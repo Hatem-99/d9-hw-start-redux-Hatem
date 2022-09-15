@@ -2,6 +2,26 @@ import { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import Job from './Job'
 import { useParams } from 'react-router-dom'
+import {connect} from 'react-redux'
+
+
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => {
+
+  return {
+    addToFavorites: companyName => {
+      dispatch({
+        type: "ADD_TO_FAVORITES",
+      
+        payload: companyName,
+      });
+    },
+  };
+};
+
 
 const CompanySearchResults = () => {
   const [jobs, setJobs] = useState([])
@@ -11,6 +31,7 @@ const CompanySearchResults = () => {
 
   useEffect(() => {
     getJobs()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const getJobs = async () => {
@@ -40,4 +61,4 @@ const CompanySearchResults = () => {
   )
 }
 
-export default CompanySearchResults
+export default connect(mapStateToProps,mapDispatchToProps)(CompanySearchResults)
