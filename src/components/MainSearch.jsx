@@ -34,7 +34,7 @@ const MainSearch = () => {
       <Row>
         <Col xs={10} className="mx-auto my-3">
           <h1>Remote Jobs Search</h1>
-          <Button variant='primary' onClick={() => navigate("/favorites")}>Favorites</Button>
+          <Button variant='primary' onClick={() => navigate("/Favorites")}>Favorites</Button>
         </Col>
         <Col xs={10} className="mx-auto">
           <Form onSubmit={handleSubmit}>
