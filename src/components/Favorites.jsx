@@ -16,7 +16,7 @@ const Favorites = ({ favorites }) => {
         <Col>
           <ListGroup>
             { favorites.map((company, i) => {
-                <ListGroup.Item key={i}>{company[i]}</ListGroup.Item>
+               return <ListGroup.Item key={i}>{company[i]}</ListGroup.Item>
             })
             }
           
