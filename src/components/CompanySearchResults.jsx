@@ -40,6 +40,7 @@ const CompanySearchResults = () => {
       if (response.ok) {
         const { data } = await response.json()
         setJobs(data)
+        
       } else {
         alert('Error fetching results')
       }
