@@ -1,5 +1,5 @@
 import { Row, Col } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const Job = ({ data, addToFavorites }) => {
-  const navigate = useNavigate();
+  
 
   return (
     <Row
@@ -36,7 +36,7 @@ const Job = ({ data, addToFavorites }) => {
       <Col xs={3}>
         <button
           onClick={() => addToFavorites(data.company_name)}
-          onMouseUp={() => navigate("/favorites")}
+        
         >
           {" "}
           add to favorites{" "}

@@ -1,17 +1,30 @@
-import {Container, Row ,Col} from 'react-bootstrap'
-import Job from './Job'
+import { Container, Row, Col, Button, ListGroup } from "react-bootstrap";
+import { connect } from "react-redux";
 
-const Favorites = () => {
+const mapStateToProps = (state) => {
+  return {
+    favorites: state.companys.favorites,
+  };
+};
 
-    return(
-        <Container>
-            <Row>
-                <Col>
-                <Job />
-                </Col>
-            </Row>
-        </Container>
-    )
-}
+const Favorites = ({ favorites }) => {
+  console.log(favorites);
+  return (
+    <Container>
+      <h1>Favorites Companys</h1>
+      <Row>
+        <Col>
+          <ListGroup>
+            { favorites.map((company, i) => {
+                <ListGroup.Item key={i}>{company[i]}</ListGroup.Item>
+            })
+            }
+          
+          </ListGroup>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
 
-export default Favorites
+export default connect(mapStateToProps)(Favorites);
