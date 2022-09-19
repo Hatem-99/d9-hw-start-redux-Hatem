@@ -17,7 +17,7 @@ const mainReducer = (state = initalState, action) => {
             return {
                 companys: {
                   ...state.companys,
-                  content: [...state.companys.favourites, action.payload],
+                  favourites: [...state.companys.favourites, action.payload],
                 },
               };
            
